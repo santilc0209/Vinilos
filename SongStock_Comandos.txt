@@ -1,0 +1,77 @@
+
+========================================
+ SongStock Market Place - Guía de Comandos
+========================================
+
+# 1. Crear entorno virtual (recomendado)
+python3 -m venv venv
+source venv/bin/activate   # En Mac/Linux
+venv\Scripts\activate    # En Windows
+
+# 2. Instalar dependencias necesarias
+pip install flask flask_sqlalchemy
+
+# 3. Inicializar la base de datos con datos de prueba
+python3 seed.py
+
+# 4. Iniciar el servidor Flask
+python3 app.py
+
+# ---------------------------------------
+# Consultas desde navegador o Postman
+# ---------------------------------------
+
+# Usuarios
+GET http://127.0.0.1:5000/usuarios
+GET http://127.0.0.1:5000/usuarios/1
+POST http://127.0.0.1:5000/usuarios
+
+# Vinilos
+GET http://127.0.0.1:5000/vinilos
+GET http://127.0.0.1:5000/vinilos/1
+POST http://127.0.0.1:5000/vinilos
+
+# Canciones
+GET http://127.0.0.1:5000/canciones
+GET http://127.0.0.1:5000/canciones/1
+POST http://127.0.0.1:5000/canciones
+
+# Carritos
+GET http://127.0.0.1:5000/carritos
+GET http://127.0.0.1:5000/carritos/1
+POST http://127.0.0.1:5000/carritos
+
+# Pedidos
+GET http://127.0.0.1:5000/pedidos
+GET http://127.0.0.1:5000/pedidos/1
+POST http://127.0.0.1:5000/pedidos
+
+# Playlists
+GET http://127.0.0.1:5000/playlists
+GET http://127.0.0.1:5000/playlists/1
+POST http://127.0.0.1:5000/playlists
+
+# Reportes
+GET http://127.0.0.1:5000/reportes
+GET http://127.0.0.1:5000/reportes/1
+POST http://127.0.0.1:5000/reportes
+
+# ---------------------------------------
+# Ejemplo de POST con JSON (Vinilos)
+# ---------------------------------------
+URL: http://127.0.0.1:5000/vinilos
+Headers: Content-Type: application/json
+Body:
+{
+  "nombre": "Random Access Memories",
+  "artista": "Daft Punk",
+  "genero": "Electrónica",
+  "anio": 2013,
+  "caratula": "https://url.com/ram.jpg",
+  "precio": 200.0,
+  "stock": 3
+}
+
+========================================
+ Fin de comandos SongStock Market Place
+========================================
